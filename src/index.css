@@ -31,6 +31,11 @@ margin-top: 5px;
   margin-bottom: 10px;
 }
 
+#card-description {
+  height: 80px;
+  resize: none;
+}
+
 .attribute {
 display: flex;
 justify-content: space-between;

@@ -34,7 +34,7 @@ class Form extends Component {
 
         <label htmlFor="card-description" className="column text-input">
           Descrição
-          <input
+          <textarea
             id="card-description"
             type="textarea"
             data-testid="description-input"
