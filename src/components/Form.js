@@ -101,9 +101,9 @@ class Form extends Component {
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <option value="Normal">Normal</option>
-            <option value="Raro">Raro</option>
-            <option value="Muito Raro">Muito Raro</option>
+            <option value="normal">Normal</option>
+            <option value="raro">Raro</option>
+            <option value="muito raro">Muito Raro</option>
           </select>
         </label>
 
@@ -143,7 +143,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  isSaveButtonDisabled: PropTypes.string.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
 };
