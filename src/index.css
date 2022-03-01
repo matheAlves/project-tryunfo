@@ -7,9 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.form {
-display: flex;
-flex-direction: column;
+form {
+  margin-left: 20px;
 }
 
 .salvar-btn {
@@ -19,5 +18,20 @@ left: 0px;
 top: 0px;
 border-radius: 2px;
 padding: 8px, 32px, 8px, 32px;
+margin-top: 5px;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-input {
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.attribute {
+display: flex;
+justify-content: space-between;
+}
