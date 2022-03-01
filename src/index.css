@@ -7,7 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form {
+display: flex;
+flex-direction: column;
 }
+
+.salvar-btn {
+height: 40px;
+width: 115px;
+left: 0px;
+top: 0px;
+border-radius: 2px;
+padding: 8px, 32px, 8px, 32px;
+}
+
