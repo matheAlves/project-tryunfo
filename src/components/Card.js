@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Trunfo from './Trunfo';
+import TrunfoCheck from './TrunfoCheck';
 
 class Card extends Component {
   render() {
@@ -16,15 +16,34 @@ class Card extends Component {
     } = this.props;
 
     return (
-      <div>
-        <h1 data-testid="name-card">{cardName}</h1>
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        <h3 data-testid="description-card">{cardDescription}</h3>
-        <h1 data-testid="attr1-card">{cardAttr1}</h1>
-        <h1 data-testid="attr2-card">{cardAttr2}</h1>
-        <h1 data-testid="attr3-card">{cardAttr3}</h1>
-        <h3 data-testid="rare-card">{cardRare}</h3>
-        <Trunfo isTrunfo={ cardTrunfo } />
+      <div className="column">
+        <h4>Pré-Visualização</h4>
+        <section className="card-preview column">
+          <h1 data-testid="name-card">{cardName}</h1>
+          <img
+            src={ cardImage }
+            alt={ cardName }
+            data-testid="image-card"
+            className="preview-image"
+          />
+          <p data-testid="description-card">{cardDescription}</p>
+          <fieldset className="preview-image">
+            <h3 data-testid="attr1-card">
+              HP:
+              {cardAttr1}
+            </h3>
+            <h3 data-testid="attr2-card">
+              Ataque:
+              {cardAttr2}
+            </h3>
+            <h3 data-testid="attr3-card">
+              Defesa:
+              {cardAttr3}
+            </h3>
+          </fieldset>
+          <h4 data-testid="rare-card">{cardRare}</h4>
+          <TrunfoCheck isTrunfo={ cardTrunfo } />
+        </section>
       </div>
     );
   }

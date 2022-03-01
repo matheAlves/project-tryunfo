@@ -7,7 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-form {
+div {
+  display: flex;
   margin-left: 20px;
 }
 
@@ -27,7 +28,7 @@ margin-top: 5px;
 }
 
 .text-input {
-  width: 25%;
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -39,4 +40,32 @@ margin-top: 5px;
 .attribute {
 display: flex;
 justify-content: space-between;
+}
+
+.preview-image {
+  width: 50%;
+}
+
+.card-preview {
+  width: 350px;
+  align-items: center;
+  background-color: burlywood;
+  font-size: small;
+  border-radius: 5%;
+  border: rgb(179, 142, 41) solid 5px;
+}
+
+.card-preview p {
+  width: 50%;
+  background-color: aliceblue;
+  padding: 25px;
+  border-radius: 5%;
+  margin: 5px;
+  box-shadow: 3px 3px 10px black;
+}
+
+.card-preview h4 {
+  background-color: rgb(177, 137, 109);
+  padding: 5px;
+  margin: 5px;
 }

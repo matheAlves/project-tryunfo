@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Trunfo extends Component {
+class TrunfoCheck extends Component {
   render() {
     const { isTrunfo } = this.props;
     if (isTrunfo) {
-      return <h3 data-testid="trunfo-card">Super Trunfo</h3>;
+      return <h4 data-testid="trunfo-card" onC>Super Trunfo</h4>;
     }
     return '';
   }
 }
-Trunfo.propTypes = {
+TrunfoCheck.propTypes = {
   isTrunfo: PropTypes.bool.isRequired,
 };
-export default Trunfo;
+export default TrunfoCheck;
