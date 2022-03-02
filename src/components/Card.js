@@ -17,7 +17,6 @@ class Card extends Component {
 
     return (
       <div className="column">
-        <h4>Pré-Visualização</h4>
         <section className="card-preview column">
           <h1 data-testid="name-card">{cardName}</h1>
           <img

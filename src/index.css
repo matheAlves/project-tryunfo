@@ -9,7 +9,8 @@ body {
 
 .main {
 width: 100%;
-justify-content:space-evenly
+justify-content: space-evenly;
+flex-wrap: wrap;
 }
 
 div {
@@ -59,6 +60,19 @@ justify-content: space-between;
   font-size: small;
   border-radius: 5%;
   border: rgb(179, 142, 41) solid 3px;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card-preview:hover {
+  box-shadow: 3px 3px 10px black;
+
+}
+
+.card-preview:active {
+  box-shadow: none;
+  transition: box-shadow 0.1s;
+  opacity: 95%;
 }
 
 fieldset {
