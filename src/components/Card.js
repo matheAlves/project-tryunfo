@@ -41,13 +41,16 @@ class Card extends Component {
               {cardAttr3}
             </h3>
           </fieldset>
-          <h4 data-testid="rare-card">{cardRare}</h4>
-          <TrunfoCheck isTrunfo={ cardTrunfo } />
+          <footer>
+            <h4 data-testid="rare-card">{cardRare}</h4>
+            <TrunfoCheck isTrunfo={ cardTrunfo } />
+          </footer>
         </section>
       </div>
     );
   }
 }
+
 Card.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,

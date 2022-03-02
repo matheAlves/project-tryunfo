@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main {
+width: 100%;
+justify-content:space-evenly
+}
+
 div {
   display: flex;
   margin-left: 20px;
@@ -47,27 +52,43 @@ justify-content: space-between;
 }
 
 .card-preview {
-  width: 350px;
-  height: 558px;
+  width: 300px;
+  height: 500px;
   align-items: center;
   background-color: burlywood;
   font-size: small;
   border-radius: 5%;
-  border: rgb(179, 142, 41) solid 5px;
+  border: rgb(179, 142, 41) solid 3px;
+}
+
+fieldset {
+  border-radius: 10%;
+  background-color: rgba(225, 230, 184, 0.233);
 }
 
 .card-preview p {
   width: 175px;
   height: 65px;
-  background-color: aliceblue;
+  background-color: rgba(225, 230, 184, 0.733);
   padding: 25px;
   border-radius: 5%;
   margin: 5px;
   box-shadow: 3px 3px 10px black;
 }
 
+.card-preview footer {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .card-preview h4 {
   background-color: rgb(177, 137, 109);
+  width: 100px;
   padding: 5px;
   margin: 5px;
+  flex-direction: row;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px 1px black;
 }
