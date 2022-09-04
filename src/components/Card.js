@@ -26,20 +26,17 @@ class Card extends Component {
             className="preview-image"
           />
           <p data-testid="description-card">{cardDescription}</p>
-          <fieldset className="preview-image">
-            <h3 data-testid="attr1-card">
-              HP:
-              {cardAttr1}
-            </h3>
-            <h3 data-testid="attr2-card">
-              Ataque:
-              {cardAttr2}
-            </h3>
-            <h3 data-testid="attr3-card">
-              Defesa:
-              {cardAttr3}
-            </h3>
-          </fieldset>
+
+          <h3 data-testid="attr1-card">
+            {`HP: ${cardAttr1}`}
+          </h3>
+          <h3 data-testid="attr2-card">
+            {`ATK: ${cardAttr2}`}
+          </h3>
+          <h3 data-testid="attr3-card">
+            {`DEF: ${cardAttr3}`}
+          </h3>
+
           <footer>
             <h4 data-testid="rare-card">{cardRare}</h4>
             <TrunfoCheck isTrunfo={ cardTrunfo } />

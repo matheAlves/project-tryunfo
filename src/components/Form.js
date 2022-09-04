@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -120,17 +122,24 @@ class Form extends Component {
           />) : (<p>Você já tem um Super Trunfo em seu baralho</p>)}
 
         </label>
-
-        <button
-          type="button"
-          data-testid="save-button"
-          className="salvar-btn"
-          disabled={ isSaveButtonDisabled }
-          onClick={ () => onSaveButtonClick(this.props) }
-        >
-          Salvar
-        </button>
-
+        <section className="row">
+          <button
+            type="button"
+            data-testid="save-button"
+            className="salvar-btn"
+            disabled={ isSaveButtonDisabled }
+            onClick={ () => onSaveButtonClick(this.props) }
+          >
+            Salvar
+          </button>
+          <button
+            type="button"
+            className="salvar-btn"
+            onClick={ this.props.load }
+          >
+            Deck Pokémon
+          </button>
+        </section>
       </form>
     );
   }

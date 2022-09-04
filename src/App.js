@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import data from './components/data';
 
 class App extends React.Component {
   constructor() {
@@ -91,7 +92,7 @@ class App extends React.Component {
     };
 
     this.setState((prevState) => ({
-      cards: [...prevState.cards, card],
+      cards: [card, ...prevState.cards],
       cardName: '',
       cardDescription: '',
       cardImage: '',
@@ -100,10 +101,18 @@ class App extends React.Component {
       cardAttr3: '0',
       cardRare: 'normal',
       cardTrunfo: false,
+      isSaveButtonDisabled: true,
     }));
 
     this.hasTrunfo();
   }
+
+  load = () => {
+    this.setState({
+      cards: data,
+    });
+    this.hasTrunfo();
+  };
 
   handleChange = ({ target }) => {
     const { name } = target;
@@ -128,24 +137,10 @@ class App extends React.Component {
       cards,
     } = this.state;
     return (
-      <div className="main">
-        <Form
-          onInputChange={ this.handleChange }
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ this.handleSave }
-          hasTrunfo={ hasTrunfo }
-        />
-        <div className="column">
-          <h3>Pré Visualização</h3>
-          <Card
+      <article className="column">
+        <section className="form-preview">
+          <Form
+            onInputChange={ this.handleChange }
             cardName={ cardName }
             cardDescription={ cardDescription }
             cardAttr1={ cardAttr1 }
@@ -154,22 +149,45 @@ class App extends React.Component {
             cardImage={ cardImage }
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onSaveButtonClick={ this.handleSave }
+            hasTrunfo={ hasTrunfo }
+            load={ this.load }
           />
+          <div className="column">
+            <h3>Pré Visualização</h3>
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
+        </section>
+        <div className="column">
+          <h2>Todas as Cartas</h2>
+          <div>
+            {cards.map((card) => (
+              <Card
+                key={ card.cardName }
+                cardName={ card.cardName }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardImage={ card.cardImage }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+              />
+            ))}
+          </div>
         </div>
-        {cards.map((card) => (
-          <Card
-            key={ card.cardName }
-            cardName={ card.cardName }
-            cardDescription={ card.cardDescription }
-            cardAttr1={ card.cardAttr1 }
-            cardAttr2={ card.cardAttr2 }
-            cardAttr3={ card.cardAttr3 }
-            cardImage={ card.cardImage }
-            cardRare={ card.cardRare }
-            cardTrunfo={ card.cardTrunfo }
-          />
-        ))}
-      </div>
+
+      </article>
     );
   }
 }
